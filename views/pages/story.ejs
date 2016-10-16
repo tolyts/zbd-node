@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <% include ../partials/header.ejs %>
+</head>
+
+<body>
+
+<% include ../partials/nav.ejs %>
+
+
+
+<div class="container">
+
+  <div class="row">
+      <div class="col-md-8">
+          <h1><%=loc.story.headline__c%></h1>
+          <br>
+          <article>
+              <img src="http://images.zawya.com/images/cia/zXLarge/<%=loc.story.image__c%>" class="img-responsive" />
+              <br>
+              <%-loc.story.body__c%>
+          </article>
+      </div>
+      <div class="col-md-4">
+              <h2 class="text-primary">Top Stories</h2>
+              <% loc.stories.forEach(function(r,idx) { %>
+                <div class="media">
+                    <div class="media-left">
+                        <a href="/story/<%=r.headline__c%>">
+                            <img class="media-object" src="http://images.zawya.com/images/cia/xtrasmall/<%=r.image__c%>" alt="...">
+                        </a>
+                    </div>
+                    <div class="media-body">
+                        <a href="/story/<%=r.story_id__c%>"><h4 class="media-heading"><%=r.headline__c%></h4></a>
+                    </div>
+                </div>
+              <% }); %>
+      </div>
+  </div>
+</div>
+
+</body>
+</html>
