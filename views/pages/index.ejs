@@ -10,11 +10,16 @@
 
   <div class="container">
     <div class="row">
+      <div class="col-md-12">
+          <h1>This is a sample NodeJs app on heroku.</h1>
+      </div>
+    </div>
+    <div class="row">
       <div class="col-md-8">
 
         <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
         <!-- Indicators -->
-        <ol class="carousel-indicators">          
+        <ol class="carousel-indicators">
             <% loc.stories.forEach(function(r,idx) { %>
               <li data-target="#carousel-example-generic" data-slide-to="<%= idx %>" class="<%=idx == 0 ? 'active' : '';%>"></li>
             <% }); %>
